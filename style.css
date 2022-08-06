@@ -1,0 +1,127 @@
+
+*{
+    box-sizing:border-box;
+}
+
+:root{
+    --primary-color: #22254b;
+    --secondary-color:black;
+
+}
+body{
+    background-color: var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-areas: 
+                        'sidebar movie movie movie movie movie'
+                        'sidebar movie movie movie movie movie';
+    /* gap: 10px; */
+    /* padding: 10px;                     */
+}
+
+ 
+.sidebar{
+    
+    position: fixed;
+    width: 240px;
+    left: 0px;
+    height: 100%;
+    background: black;
+}
+.sidebar header{
+    font-size: 25px;
+    color: rgb(161, 11, 11);
+    line-height: 50px;
+    text-align: center;
+    background-color: #2d2d2d;
+}
+.sidebar a{
+    display: block;
+    height: 65px;
+    width: 100%;
+    color: azure;
+    line-height: 65px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    border-top: 1px solid rgba(255,255,255,.1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a.active,a:hover{
+    background-color: #2d2d2d;
+}
+
+.sidebar a i{
+    font-size: 23px;
+    margin-right: 16px;
+}
+.sidebar h3{
+    display: block;
+    color: #2d2d2d;
+} 
+
+.search{
+    
+    padding:1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color: var(--secondary-color);
+}
+.search:focus{
+    outline:0;
+    background-color: var(--primary-color);
+}
+.search::placeholder{
+    color: white;
+}
+main{
+    position: relative;
+    /* padding: 240px; */
+    display:flex;
+    flex-wrap: row;
+    justify-content: center;
+    
+}
+
+.movie{
+    width: 130px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+.movie img{
+    width: 100%;
+}
+.movieInfo{
+    color: #fff;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    font-size: 7px;
+    padding: 0.3rem;
+    letter-spacing: 0.5px;
+}
+.movieInfo h3{
+    margin-top: 0;
+}
+ 
+
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    font-size: smaller;
+    transform: translateY(100%);
+    transition:transform 0.2s ease-in;
+}
+.movie:hover .overview{
+    transform: translateY(0);
+}
