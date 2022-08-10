@@ -6,16 +6,16 @@
 :root{
     --primary-color: #22254b;
     --secondary-color:black;
-
+    display: flex;
 }
 body{
     background-color: var(--secondary-color);
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    display: grid;
+    /* display: grid;
     grid-template-areas: 
                         'sidebar movie movie movie movie movie'
-                        'sidebar movie movie movie movie movie';
+                        'sidebar movie movie movie movie movie'; */
     /* gap: 10px; */
     /* padding: 10px;                     */
 }
@@ -32,29 +32,27 @@ body{
 .sidebar header{
     font-size: 25px;
     color: rgb(161, 11, 11);
-    line-height: 50px;
-    text-align: center;
-    background-color: #2d2d2d;
+    line-height: 25px;
+    margin: 10px;
 }
-.sidebar a{
+.sidebar ul{
     display: block;
-    height: 65px;
-    width: 100%;
     color: azure;
-    line-height: 65px;
-    padding-left: 30px;
-    box-sizing: border-box;
-    border-bottom: 1px solid black;
-    border-top: 1px solid rgba(255,255,255,.1);
+    margin: 10px;
+    padding-left: 10px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-a.active,a:hover{
+li.active,li:hover{
     background-color: #2d2d2d;
 }
 
-.sidebar a i{
-    font-size: 23px;
-    margin-right: 16px;
+.sidebar li{
+    margin: 15px 10px;
+    padding: 5px 20px;
+    font-size: 15px;
+    background-color: rgb(54, 54, 53);
+    border-radius: 6px;
+    
 }
 .sidebar h3{
     display: block;
@@ -63,10 +61,13 @@ a.active,a:hover{
 
 .search{
     
-    padding:1rem;
-    display:flex;
-    justify-content: flex-end;
-    background-color: var(--secondary-color);
+    margin: 20px;
+    padding: 5px 20px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 3px;
+    border: 0;
+    
+
 }
 .search:focus{
     outline:0;
@@ -75,13 +76,14 @@ a.active,a:hover{
 .search::placeholder{
     color: white;
 }
+
 main{
     position: relative;
-    /* padding: 240px; */
+    padding: 240px;
     display:flex;
     flex-wrap: row;
     justify-content: center;
-    
+    border-radius: 10px;
 }
 
 .movie{
